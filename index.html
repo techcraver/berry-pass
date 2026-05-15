@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 Berry Pass -Salem Parent's Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #DC3558;
+      --red-dark: #B82848;
+      --red-light: #FDF0F3;
+      --navy: #1C2B4A;
+      --navy-light: #EAECf2;
+      --green: #2D5016;
+      --green-light: #EEF4E8;
+      --gold: #D4861A;
+      --gold-light: #FEF6E8;
+      --gray-50: #F9F9F7;
+      --gray-100: #F0EEE9;
+      --gray-200: #DDD9D0;
+      --gray-400: #9B9589;
+      --gray-600: #5C5650;
+      --gray-800: #2A2520;
+      --white: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-800);
+      line-height: 1.6;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #2A3F6E 30%, var(--red) 100%);
+      color: white;
+      padding: 56px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 260px; height: 260px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -30px;
+      width: 200px; height: 200px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+    }
+    .hero-logo {
+      width: 140px;
+      height: auto;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 6vw, 48px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .hero-sub {
+      font-size: clamp(14px, 2.5vw, 18px);
+      opacity: 0.88;
+      max-width: 520px;
+      margin: 0 auto 28px;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 10px;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .hero-stat span {
+      display: block;
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 40px 0;
+    }
+
+    section + section {
+      border-top: 1px solid var(--gray-200);
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--gray-800);
+      margin-bottom: 6px;
+    }
+
+    .section-desc {
+      color: var(--gray-600);
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
+    /* ── Alert Boxes ── */
+    .alert {
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 14px;
+      line-height: 1.55;
+      margin-bottom: 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .alert-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .alert strong { display: block; font-weight: 700; margin-bottom: 2px; }
+    .alert-red { background: var(--red-light); border-left: 4px solid var(--red); }
+    .alert-gold { background: var(--gold-light); border-left: 4px solid var(--gold); }
+    .alert-green { background: var(--green-light); border-left: 4px solid var(--green); }
+    .alert-blue { background: var(--navy-light); border-left: 4px solid var(--navy); }
+
+    /* ── Info Grid ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .info-card-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 4px;
+    }
+    .info-card-value {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--red);
+    }
+    .info-card-note {
+      font-size: 12px;
+      color: var(--gray-600);
+      margin-top: 2px;
+    }
+
+    /* ── Value box ── */
+    .value-box {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .value-box-header {
+      background: var(--green-light);
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--gray-200);
+      font-weight: 700;
+      color: var(--green);
+      font-size: 15px;
+    }
+    .value-rows { padding: 4px 0; }
+    .value-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      font-size: 14px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .value-row:last-child { border-bottom: none; }
+    .value-row-name { color: var(--gray-800); }
+    .value-row-detail { color: var(--gray-600); font-size: 12px; margin-top: 1px; }
+    .value-row-amount {
+      font-weight: 700;
+      color: var(--green);
+      white-space: nowrap;
+      margin-left: 16px;
+    }
+    .value-total {
+      background: var(--navy);
+      color: white;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    /* ── Filter buttons ── */
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .filter-btn {
+      padding: 7px 16px;
+      border-radius: 20px;
+      border: 1.5px solid var(--gray-200);
+      background: var(--white);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      color: var(--gray-600);
+    }
+    .filter-btn:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+    .filter-btn.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: white;
+    }
+
+    /* ── Attraction Cards ── */
+    .attractions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: box-shadow 0.15s, transform 0.15s;
+    }
+    .card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.09);
+      transform: translateY(-2px);
+    }
+    .card.hidden { display: none; }
+
+    .card-header {
+      padding: 16px 18px 12px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .card-category {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 4px;
+    }
+    .card-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gray-800);
+      line-height: 1.3;
+    }
+
+    .card-body { padding: 14px 18px; }
+
+    .card-row {
+      display: flex;
+      gap: 10px;
+      font-size: 13px;
+      margin-bottom: 9px;
+      align-items: flex-start;
+    }
+    .card-row:last-child { margin-bottom: 0; }
+    .card-row-icon { flex-shrink: 0; width: 18px; text-align: center; margin-top: 1px; }
+    .card-row-label {
+      font-weight: 600;
+      color: var(--gray-600);
+      white-space: nowrap;
+      margin-right: 4px;
+    }
+    .card-row-value { color: var(--gray-800); }
+
+    /* Parent cost badge */
+    .parent-cost {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .parent-cost-free {
+      background: var(--green-light);
+      color: var(--green);
+    }
+    .parent-cost-paid {
+      background: var(--gold-light);
+      color: var(--gold);
+    }
+    .parent-cost-confirm {
+      background: var(--gray-100);
+      color: var(--gray-600);
+    }
+
+    /* Restriction badges */
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 12px;
+    }
+    .badge-days { background: var(--navy-light); color: var(--navy); }
+    .badge-times { background: var(--gold-light); color: var(--gold); }
+    .badge-limit { background: var(--red-light); color: var(--red); }
+    .badge-note { background: var(--gray-100); color: var(--gray-600); }
+
+    /* ── Tips ── */
+    .tips-list {
+      display: grid;
+      gap: 12px;
+    }
+    .tip {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      background: var(--navy);
+      color: white;
+      font-size: 13px;
+      font-weight: 800;
+      border-radius: 50%;
+      min-width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .tip-text { font-size: 14px; color: var(--gray-800); line-height: 1.55; }
+    .tip-text strong { font-weight: 700; }
+
+    /* ── Parent Cost Summary Table ── */
+    .cost-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+    }
+    .cost-table th {
+      background: var(--gray-100);
+      padding: 11px 16px;
+      text-align: left;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--gray-600);
+    }
+    .cost-table td {
+      padding: 12px 16px;
+      border-top: 1px solid var(--gray-100);
+      vertical-align: top;
+    }
+    .cost-table tr:first-child td { border-top: none; }
+    .cost-free { color: var(--green); font-weight: 700; }
+    .cost-paid { color: var(--gold); font-weight: 700; }
+    .cost-confirm { color: var(--gray-400); font-style: italic; }
+
+    /* ── Road Trip Schedule ── */
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--gray-200);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 16px;
+    }
+    .schedule-cell {
+      background: var(--white);
+      padding: 12px 10px;
+      text-align: center;
+    }
+    .schedule-cell-dates {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gray-600);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .schedule-cell-city {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-top: 2px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 13px;
+      color: var(--gray-400);
+      border-top: 1px solid var(--gray-200);
+    }
+    footer a { color: var(--red); text-decoration: none; }
+
+    #kids-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      border-radius: 4px;
+      background: var(--gray-200);
+      outline: none;
+    }
+    #kids-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--navy);
+      cursor: pointer;
+    }
+    #kids-slider::-moz-range-thumb {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--navy);
+      cursor: pointer;
+      border: none;
+    }
+
+    @media (max-width: 580px) {
+      .hero { padding: 40px 20px 36px; }
+      .hero-stats { gap: 8px; }
+      .hero-stat { padding: 8px 14px; font-size: 12px; }
+      .hero-stat span { font-size: 18px; }
+      .attractions-grid { grid-template-columns: 1fr; }
+      .cost-table { font-size: 13px; }
+      .cost-table th, .cost-table td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <img src="logo.png" alt="Marion Berries Baseball" class="hero-logo">
+  <div class="hero-eyebrow">Salem, Oregon • Summer 2026</div>
+  <h1>Berry Pass Parent's Guide</h1>
+  <p class="hero-sub">Everything you need to know about the Marion Berries Berry Pass and how much it costs you as a parent.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><span>$70</span>per kid pass</div>
+    <div class="hero-stat"><span>18+</span>attractions</div>
+    <div class="hero-stat"><span>Ages 3–18</span>eligible</div>
+    <div class="hero-stat"><span>June 1–Sept 7</span>valid dates</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ── All Attractions ── -->
+  <section>
+    <h2>All 18 Attractions</h2>
+    <p class="section-desc">Use the filters to find the right activity. Each card shows visit limits, day/time restrictions, and what it'll cost you as the parent.</p>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active & Sports</button>
+      <button class="filter-btn" data-filter="arts">Arts & Culture</button>
+      <button class="filter-btn" data-filter="outdoors">Outdoors</button>
+      <button class="filter-btn" data-filter="food">Food</button>
+      <button class="filter-btn" data-filter="entertainment">Entertainment</button>
+    </div>
+
+    <div class="attractions-grid" id="attractions-grid">
+
+      <!-- Marion Berries Baseball -->
+      <div class="card" data-category="entertainment">
+        <div class="card-header">
+          <div class="card-category">Entertainment</div>
+          <div class="card-name">Marion Berries Baseball Games</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🎟️</div>
+            <div><span class="card-row-label">Access:</span><span class="card-row-value">All home games -general admission</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">📅</div>
+            <div><span class="card-row-label">Early:</span><span class="card-row-value">Opening weekend May 29–31</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-paid">💵 Parents: $10/ticket</span></div>
+          </div>
+          <div class="badges">
+            <span class="badge badge-note">Upgrade to reserved for extra fee</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Athletic Edge -->
+      <div class="card" data-category="active">
+        <div class="card-header">
+          <div class="card-category">Active & Sports</div>
+          <div class="card-name">Athletic Edge Adventure Park</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🔁</div>
+            <div><span class="card-row-label">Limit:</span><span class="card-row-value">Up to 3 visits per month</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-free">✅ Parents: FREE</span></div>
+          </div>
+          <div class="badges">
+            <span class="badge badge-days">Mon–Thu only</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mini Golf -->
+      <div class="card" data-category="outdoors">
+        <div class="card-header">
+          <div class="card-category">Outdoors</div>
+          <div class="card-name">Best Little Roadhouse Mini Golf</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🔁</div>
+            <div><span class="card-row-label">Limit:</span><span class="card-row-value">1 round per day</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-free">✅ Free to watch; $8/person to golf</span></div>
+          </div>
+          <div class="badges">
+            <span class="badge badge-days">Mon–Fri only</span>
+            <span class="badge badge-times">11am–4pm only</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chick-fil-A -->
+      <div class="card" data-category="food">
+        <div class="card-header">
+          <div class="card-category">Food</div>
+          <div class="card-name">Chick-fil-A</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🍗</div>
+            <div><span class="card-row-label">Includes:</span><span class="card-row-value">1 kid's meal per week</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">📍</div>
+            <div><span class="card-row-label">Locations:</span><span class="card-row-value">Salem &amp; Keizer</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-confirm">💬 Buy your own meal</span></div>
+          </div>
+          <div class="badges">
+            <span class="badge badge-days">Mon–Sat only</span>
+            <span class="badge badge-note">Dine-in only</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enchanted Forest -->
+      <div class="card" data-category="entertainment">
+        <div class="card-header">
+          <div class="card-category">Entertainment</div>
+          <div class="card-name">Enchanted Forest</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🔁</div>
+            <div><span class="card-row-label">Limit:</span><span class="card-row-value">1 total visit per pass</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-confirm">❓ <a href="https://www.enchantedforest.com/prices" target="_blank" style="color:var(--gold);">See adult pricing</a></span></div>
+          </div>
+          <div class="badges">
+            <span class="badge badge-days">Mon–Thu only</span>
+            <span class="badge badge-limit">Ends August 27</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extreme Velocity -->
+      <div class="card" data-category="active">
+        <div class="card-header">
+          <div class="card-category">Active & Sports</div>
+          <div class="card-name">Extreme Velocity</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🎯</div>
+            <div><span class="card-row-label">Laser Tag:</span><span class="card-row-value">2 games/day during regular hours</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">🔫</div>
+            <div><span class="card-row-label">Airsoft:</span><span class="card-row-value">Mon or Thu, 5pm–8pm</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-free">✅ Parents: FREE</span></div>
+          </div>
+          <div class="badges">
+            <span class="badge badge-note">Outside food welcome</span>
+            <span class="badge badge-note">Waiver required</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fordyce Farm -->
+      <div class="card" data-category="outdoors food">
+        <div class="card-header">
+          <div class="card-category">Outdoors / Food</div>
+          <div class="card-name">Fordyce Farm</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🫐</div>
+            <div><span class="card-row-label">Includes:</span><span class="card-row-value">1 pint of u-pick berries per day</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">🕐</div>
+            <div><span class="card-row-label">Hours:</span><span class="card-row-value">Jun–Aug: Mon–Sat 8am–6pm<br>Sep: Mon–Sat 9am–6pm</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Get Air -->
+      <div class="card" data-category="active">
+        <div class="card-header">
+          <div class="card-category">Active & Sports</div>
+          <div class="card-name">Get Air, Salem</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🔁</div>
+            <div><span class="card-row-label">Limit:</span><span class="card-row-value">4 visits per month</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-free">✅ Free (non-jumping parents)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gilbert House -->
+      <div class="card" data-category="arts">
+        <div class="card-header">
+          <div class="card-category">Arts & Culture</div>
+          <div class="card-name">Gilbert House Children's Museum</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🔁</div>
+            <div><span class="card-row-label">Limit:</span><span class="card-row-value">1 admission per day</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-paid">💵 Parents: $16/adult</span></div>
+          </div>
+          <div class="badges">
+            <span class="badge badge-limit">Max 1 adult per 4 kids</span>
+            <span class="badge badge-note">Every child needs a Berry Pass</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oregon Garden -->
+      <div class="card" data-category="outdoors">
+        <div class="card-header">
+          <div class="card-category">Outdoors</div>
+          <div class="card-name"><a href="https://oregongarden.org/" target="_blank" style="color:var(--gray-800); text-decoration:none;">Oregon Garden</a></div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🔁</div>
+            <div><span class="card-row-label">Limit:</span><span class="card-row-value">1 admission per day</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-paid">💵 Parents: $14/adult</span></div>
+          </div>
+          <div class="badges">
+            <span class="badge badge-note">Regular hours</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oregon State Fair -->
+      <div class="card" data-category="entertainment">
+        <div class="card-header">
+          <div class="card-category">Entertainment</div>
+          <div class="card-name">Oregon State Fair</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🎡</div>
+            <div><span class="card-row-label">Dates:</span><span class="card-row-value">Aug 28 – Sept 7, 2026</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">🔁</div>
+            <div><span class="card-row-label">Limit:</span><span class="card-row-value">1 admission during fair dates</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-paid">💵 Regular adult admission</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REC Bowling -->
+      <div class="card" data-category="entertainment">
+        <div class="card-header">
+          <div class="card-category">Entertainment</div>
+          <div class="card-name">REC Bowling</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🎳</div>
+            <div><span class="card-row-label">Includes:</span><span class="card-row-value">Shoe rental + 1 game per day</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-free">✅ Free to watch</span></div>
+          </div>
+          <div class="badges">
+            <span class="badge badge-note">$5 if you want to bowl</span>
+            <span class="badge badge-limit">Not valid after 5pm on Fri or Sat</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rock Boxx -->
+      <div class="card" data-category="active">
+        <div class="card-header">
+          <div class="card-category">Active & Sports</div>
+          <div class="card-name"><a href="https://www.therockboxx.com/" target="_blank" style="color:var(--gray-800); text-decoration:none;">Rock Boxx Climbing Gym</a></div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🧗</div>
+            <div><span class="card-row-label">Limit:</span><span class="card-row-value">1 admission per week</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-free">✅ Free to watch; pay to climb</span></div>
+          </div>
+          <div class="badges">
+            <span class="badge badge-note">Sun–Sat, regular hours</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Salem Golf Club -->
+      <div class="card" data-category="active outdoors">
+        <div class="card-header">
+          <div class="card-category">Active & Sports</div>
+          <div class="card-name">Salem Golf Club Driving Range</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">⛳</div>
+            <div><span class="card-row-label">Includes:</span><span class="card-row-value">1 bucket of balls per day</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-free">✅ Free to watch; $7/bucket to hit</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Riverfront Carousel -->
+      <div class="card" data-category="entertainment">
+        <div class="card-header">
+          <div class="card-category">Entertainment</div>
+          <div class="card-name">Salem's Riverfront Carousel</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🎠</div>
+            <div><span class="card-row-label">Includes:</span><span class="card-row-value">2 rides per daily visit</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-paid">💵 $2/ride if you want to ride</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- YMCA Pool -->
+      <div class="card" data-category="active">
+        <div class="card-header">
+          <div class="card-category">Active & Sports</div>
+          <div class="card-name">Salem YMCA Swimming Pool</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🏊</div>
+            <div><span class="card-row-label">Limit:</span><span class="card-row-value">1 admission per day</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-free">✅ Parents: FREE to watch</span></div>
+          </div>
+          <div class="badges">
+            <span class="badge badge-days">Mon–Fri only</span>
+            <span class="badge badge-times">1:30pm–3:30pm only</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- KROC Center -->
+      <div class="card" data-category="active">
+        <div class="card-header">
+          <div class="card-category">Active & Sports</div>
+          <div class="card-name">Salvation Army KROC Center</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🔁</div>
+            <div><span class="card-row-label">Limit:</span><span class="card-row-value">1 admission per week</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-paid">💵 <a href="https://salem.kroccommunity.org/s/membership" target="_blank" style="color:var(--gold);">Parents: $16/adult</a></span></div>
+          </div>
+          <div class="badges">
+            <span class="badge badge-days">Mon–Fri only</span>
+            <span class="badge badge-times">3pm–8:45pm only</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Willamette Valley Heritage Center -->
+      <div class="card" data-category="arts">
+        <div class="card-header">
+          <div class="card-category">Arts & Culture</div>
+          <div class="card-name">Willamette Heritage Center</div>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <div class="card-row-icon">🔁</div>
+            <div><span class="card-row-label">Limit:</span><span class="card-row-value">1 admission per day</span></div>
+          </div>
+          <div class="card-row">
+            <div class="card-row-icon">👤</div>
+            <div><span class="parent-cost parent-cost-paid">💵 Parents: $15/adult</span></div>
+          </div>
+          <div class="badges">
+            <span class="badge badge-note">Regular business hours</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /attractions-grid -->
+  </section>
+
+  <!-- ── Parent Cost Summary ── -->
+  <section>
+    <h2>What You'll Pay as a Parent</h2>
+    <p class="section-desc">The pass covers your kid - but you still need to get yourself in the door. Costs below are community-verified by Salem parents.</p>
+
+    <div class="alert alert-gold" style="margin-bottom:20px;">
+      <div class="alert-icon">👶</div>
+      <div><strong>Kids under 3?</strong> The Berry Pass is for ages 3–18, so little ones aren't covered. Most venues have their own under-3 policy - call ahead to confirm before your visit.</div>
+    </div>
+
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>Venue</th>
+          <th>Parent / Adult Cost</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Salem YMCA Pool</strong></td>
+          <td class="cost-free">FREE</td>
+          <td>Parents watch at no charge</td>
+        </tr>
+        <tr>
+          <td><strong>Athletic Edge</strong></td>
+          <td class="cost-free">FREE</td>
+          <td>Adults get in free</td>
+        </tr>
+        <tr>
+          <td><strong>Get Air</strong></td>
+          <td class="cost-free">FREE</td>
+          <td>Free for non-jumping parents; pay if you want to jump</td>
+        </tr>
+        <tr>
+          <td><strong>Extreme Velocity</strong></td>
+          <td class="cost-free">FREE</td>
+          <td>Parents hang out free; tables available, outside food welcome; waiver required</td>
+        </tr>
+        <tr>
+          <td><strong>REC Bowling</strong></td>
+          <td class="cost-free">FREE to watch</td>
+          <td>$5 add-on (shoes + 1 game) if you want to bowl</td>
+        </tr>
+        <tr>
+          <td><strong>Marion Berries Baseball</strong></td>
+          <td class="cost-paid">$10 / ticket</td>
+          <td>General admission; reserved seating costs more</td>
+        </tr>
+        <tr>
+          <td><strong>KROC Center</strong></td>
+          <td class="cost-paid"><a href="https://salem.kroccommunity.org/s/membership" target="_blank" style="color:var(--gold);">$16 / adult</a></td>
+          <td>Required to accompany your child</td>
+        </tr>
+        <tr>
+          <td><strong>Gilbert House</strong></td>
+          <td class="cost-paid">$16 / adult</td>
+          <td>Max 1 adult per 4 kids; every child needs their own pass</td>
+        </tr>
+        <tr>
+          <td><strong>Enchanted Forest</strong></td>
+          <td class="cost-confirm"><a href="https://www.enchantedforest.com/prices" target="_blank" style="color:var(--gray-400);">See current rates</a></td>
+          <td>Plan ahead - Mon–Thu only, ends 8/27</td>
+        </tr>
+        <tr>
+          <td><strong><a href="https://oregongarden.org/" target="_blank" style="color:var(--gray-800);">Oregon Garden</a></strong></td>
+          <td class="cost-paid">$14 / adult</td>
+          <td>Regular admission rate</td>
+        </tr>
+        <tr>
+          <td><strong><a href="https://www.therockboxx.com/" target="_blank" style="color:var(--gray-800);">Rock Boxx</a></strong></td>
+          <td class="cost-free">FREE to watch</td>
+          <td>Pay if you want to climb</td>
+        </tr>
+        <tr>
+          <td><strong>Willamette Heritage Center</strong></td>
+          <td class="cost-paid">$15 / adult</td>
+          <td><a href="https://www.willametteheritage.org/tickets/" target="_blank" style="color:var(--navy);">See current rates</a></td>
+        </tr>
+        <tr>
+          <td><strong>Oregon State Fair</strong></td>
+          <td class="cost-paid">Regular adult admission</td>
+          <td>Separate fair admission required; Aug 28–Sept 7</td>
+        </tr>
+        <tr>
+          <td><strong>Best Little Roadhouse Mini Golf</strong></td>
+          <td class="cost-free">FREE to watch</td>
+          <td>$8/person if you want to golf; Mon–Fri, 11am–4pm</td>
+        </tr>
+        <tr>
+          <td><strong>Salem Golf Club Driving Range</strong></td>
+          <td class="cost-free">FREE to watch</td>
+          <td>$7/bucket if you want to hit balls</td>
+        </tr>
+        <tr>
+          <td><strong>Salem's Riverfront Carousel</strong></td>
+          <td class="cost-free">FREE to watch</td>
+          <td>$2/ride if you want to ride</td>
+        </tr>
+        <tr>
+          <td><strong>All other venues</strong></td>
+          <td class="cost-confirm">Varies - verify</td>
+          <td>Contact each venue before your first visit</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ── The Basics ── -->
+  <section>
+    <h2>What Is the Berry Pass?</h2>
+    <p class="section-desc">A flat-fee summer entertainment pass for kids ages 3–18 in the Salem area, organized by the Marion Berries Baseball Club. One pass, 18+ local venues, all summer long.</p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card-label">Pass Cost</div>
+        <div class="info-card-value">$70</div>
+        <div class="info-card-note">+ $2.99 processing fee per order</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Valid Season</div>
+        <div class="info-card-value">June 1 – Sept 7</div>
+        <div class="info-card-note">2026, through Labor Day</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Early Access</div>
+        <div class="info-card-value">May 29–31</div>
+        <div class="info-card-note">Opening weekend Berries games only</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Who Can Use It</div>
+        <div class="info-card-value">Ages 3–18</div>
+        <div class="info-card-note">Adult supervision required at all venues</div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:32px;">2026 Berries Home Games</h2>
+    <p class="section-desc">The Berry Pass covers all home games. Bring your kids on these dates — the Berries are in Salem.</p>
+
+    <div class="schedule-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="schedule-cell">
+        <div class="schedule-cell-dates">May 29–31</div>
+        <div class="schedule-cell-city">Port Angeles</div>
+      </div>
+      <div class="schedule-cell">
+        <div class="schedule-cell-dates">June 2–4</div>
+        <div class="schedule-cell-city">Bend</div>
+      </div>
+      <div class="schedule-cell">
+        <div class="schedule-cell-dates">June 12–14</div>
+        <div class="schedule-cell-city">Ridgefield</div>
+      </div>
+      <div class="schedule-cell">
+        <div class="schedule-cell-dates">June 19–21</div>
+        <div class="schedule-cell-city">Yakima</div>
+      </div>
+      <div class="schedule-cell">
+        <div class="schedule-cell-dates">June 26–28</div>
+        <div class="schedule-cell-city">Corvallis</div>
+      </div>
+      <div class="schedule-cell">
+        <div class="schedule-cell-dates">July 3–5</div>
+        <div class="schedule-cell-city">Portland</div>
+      </div>
+      <div class="schedule-cell">
+        <div class="schedule-cell-dates">July 7–8</div>
+        <div class="schedule-cell-city">DubSea</div>
+      </div>
+      <div class="schedule-cell">
+        <div class="schedule-cell-dates">July 17–19</div>
+        <div class="schedule-cell-city">Springfield</div>
+      </div>
+      <div class="schedule-cell">
+        <div class="schedule-cell-dates">July 24–26</div>
+        <div class="schedule-cell-city">Springfield</div>
+      </div>
+    </div>
+
+    <div class="alert alert-red" style="margin-top:24px;">
+      <div class="alert-icon">⚠️</div>
+      <div><strong>Lost passes are not replaced.</strong> Treat it like cash. After May 4, shipping is no longer available -all passes require pickup at The Farm.</div>
+    </div>
+    <div class="alert alert-gold">
+      <div class="alert-icon">📦</div>
+      <div><strong>Pickup instructions.</strong> If you selected "Pick Up" at purchase, watch your email for pickup instructions from The Farm. Passes become available mid-May.</div>
+    </div>
+  </section>
+
+  <!-- ── Is It Worth It ── -->
+  <section>
+    <h2>Is It Worth $70?</h2>
+    <p class="section-desc">Short answer: use it at three or four venues regularly and it pays for itself. Drag the slider to see how the math changes for your family.</p>
+
+    <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">
+      <label style="font-size:14px; font-weight:700; color:var(--gray-800); white-space:nowrap;">Number of kids:</label>
+      <input type="range" id="kids-slider" min="1" max="4" value="1"
+        style="flex:1; accent-color:var(--navy); cursor:pointer; height:36px; touch-action:pan-x;">
+      <span id="kids-label" style="font-size:22px; font-weight:800; color:var(--red); min-width:24px; text-align:center;">1</span>
+    </div>
+
+    <div class="value-box">
+      <div class="value-box-header">📊 Sample Season Value — <span id="header-label">1 Child</span></div>
+      <div class="value-rows">
+        <div class="value-row">
+          <div>
+            <div class="value-row-name">Chick-fil-A Kids Meals</div>
+            <div class="value-row-detail">1x/week × 6 weeks = ~$8 avg each</div>
+          </div>
+          <div class="value-row-amount" data-per-kid="48" id="val-chickfila">~$48</div>
+        </div>
+        <div class="value-row">
+          <div>
+            <div class="value-row-name">Get Air (trampoline park)</div>
+            <div class="value-row-detail">4 visits/month × 3 months = ~$15 each</div>
+          </div>
+          <div class="value-row-amount" data-per-kid="180" id="val-getair">~$180</div>
+        </div>
+        <div class="value-row">
+          <div>
+            <div class="value-row-name">Enchanted Forest</div>
+            <div class="value-row-detail">1 visit, Mon–Thu before 8/27</div>
+          </div>
+          <div class="value-row-amount" data-per-kid="17" id="val-enchanted">~$17</div>
+        </div>
+        <div class="value-row">
+          <div>
+            <div class="value-row-name">Oregon State Fair</div>
+            <div class="value-row-detail">1 admission, Aug 28–Sept 7</div>
+          </div>
+          <div class="value-row-amount" data-per-kid="12" id="val-fair">~$12</div>
+        </div>
+        <div class="value-row">
+          <div>
+            <div class="value-row-name">Rock Boxx Climbing</div>
+            <div class="value-row-detail">1x/week × 4 weeks = ~$15 each</div>
+          </div>
+          <div class="value-row-amount" data-per-kid="60" id="val-rockboxx">~$60</div>
+        </div>
+        <div class="value-row">
+          <div>
+            <div class="value-row-name">Marion Berries Games</div>
+            <div class="value-row-detail">Multiple home games included</div>
+          </div>
+          <div class="value-row-amount" data-per-kid="30" id="val-games">~$30</div>
+        </div>
+      </div>
+      <div class="value-total" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div style="display:flex; justify-content:space-between;">
+          <span>Conservative Season Value</span>
+          <span id="total-value">~$347</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; opacity:0.75; font-size:13px; font-weight:600;">
+          <span>Pass cost (<span id="pass-count">1</span> × $70 + $2.99 fee)</span>
+          <span id="total-cost">$72.99</span>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--gray-400); margin-top:10px; text-align:right;">Estimates based on typical local pricing. Your mileage will vary.</p>
+  </section>
+
+  <!-- ── Tips ── -->
+  <section>
+    <h2>Tips for Making the Most of It</h2>
+    <p class="section-desc">Stuff that isn't obvious from reading the rules.</p>
+
+    <div class="tips-list">
+      <div class="tip">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><strong>Book Enchanted Forest early.</strong> It's Mon–Thu only and expires August 27 -the window is smaller than it looks. If you miss it, it's gone for the season.</div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>The YMCA pool window is tiny.</strong> Mon–Fri, 1:30–3:30pm only. Two hours. That's the only slot all week -plan accordingly. The upside: it's free for you to sit and watch.</div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><strong>KROC adds up fast for parents.</strong> At $13 per adult per visit, a weekly habit costs you $52/month. Great facility -just go in with eyes open on the parent cost.</div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">4</div>
+        <div class="tip-text"><strong>Chick-fil-A is dine-in only.</strong> No drive-through, no delivery. You need to sit down. Salem and Keizer both count.</div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">5</div>
+        <div class="tip-text"><strong>Gilbert House has a strict ratio.</strong> Maximum 1 adult per 4 kids, and every child must have their own pass -you can't share. If you're bringing a group, do the math before you go.</div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">6</div>
+        <div class="tip-text"><strong>Call ahead on venues marked "confirm."</strong> The pass covers your kid -but whether you can get in with them, and what you'll pay, varies. A quick call before your first visit saves a wasted trip.</div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">7</div>
+        <div class="tip-text"><strong>Don't wait on the State Fair.</strong> It's one admission total, August 28–September 7. That's 10 days. Put it on the calendar now so it doesn't slip by.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Official Link ── -->
+  <section>
+    <div class="alert alert-blue">
+      <div class="alert-icon">🔗</div>
+      <div><strong>Official information.</strong> This guide is meant to help you plan -always verify details at the source. Visit <a href="https://www.marionberriesbaseball.com/berrypass" style="color:var(--navy); font-weight:700;">marionberriesbaseball.com/berrypass</a> for the most current rules and purchasing information.</div>
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<footer>
+  <p>A parent-made guide for the 2026 Berry Pass season • Salem, Oregon</p>
+  <p style="margin-top:6px;">Information current as of May 2026. Verify details with each venue before visiting.</p>
+</footer>
+
+<script>
+  const slider = document.getElementById('kids-slider');
+  const amounts = document.querySelectorAll('.value-row-amount[data-per-kid]');
+  const perKidTotal = 347;
+
+  function updateSlider(n) {
+    slider.value = n;
+    document.getElementById('kids-label').textContent = n;
+    document.getElementById('header-label').textContent = n === 1 ? '1 Child' : `${n} Kids`;
+    document.getElementById('pass-count').textContent = n;
+    document.getElementById('total-value').textContent = `~$${(perKidTotal * n).toLocaleString()}`;
+    document.getElementById('total-cost').textContent = `$${(70 * n + 2.99).toFixed(2)}`;
+    amounts.forEach(el => {
+      const val = parseInt(el.dataset.perKid) * n;
+      el.textContent = `~$${val.toLocaleString()}`;
+    });
+  }
+
+  // Auto-play: 1 → 4 → 1 on load, then stop
+  let autoStep = 1;
+  let direction = 1;
+  let autoPlays = 0;
+  const autoInterval = setInterval(() => {
+    autoStep += direction;
+    updateSlider(autoStep);
+    if (autoStep === 4) direction = -1;
+    if (autoStep === 1 && direction === -1) {
+      clearInterval(autoInterval);
+    }
+  }, 350);
+
+  slider.addEventListener('input', () => {
+    clearInterval(autoInterval);
+    updateSlider(parseInt(slider.value));
+  });
+
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.category.includes(filter)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
