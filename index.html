@@ -368,6 +368,98 @@
     .badge-limit { background: var(--red-light); color: var(--red); }
     .badge-note { background: var(--gray-100); color: var(--gray-600); }
 
+    /* ── Countdown Banner ── */
+    .countdown-banner {
+      background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+      color: white;
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 8px 24px rgba(220,53,88,0.28);
+    }
+    .countdown-figure { flex-shrink: 0; text-align: center; }
+    .countdown-number {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1;
+      animation: countdown-pulse 1.8s ease-in-out infinite;
+    }
+    .countdown-unit {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.9;
+    }
+    .countdown-text { font-size: 14px; line-height: 1.5; }
+    .countdown-text strong { display: block; font-size: 16px; margin-bottom: 3px; }
+    @keyframes countdown-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    /* ── Last Chance Checklist ── */
+    .checklist-progress {
+      font-size: 14px;
+      color: var(--gray-600);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .checklist-progress-bar {
+      height: 8px;
+      background: var(--gray-200);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .checklist-progress-fill {
+      height: 100%;
+      background: var(--green);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 10px;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      padding: 10px 14px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .checklist-item:hover { border-color: var(--gray-400); }
+    .checklist-item.done { background: var(--green-light); border-color: var(--green); }
+    .checklist-item.done .checklist-item-name { text-decoration: line-through; opacity: 0.7; }
+    .checklist-item.closed { cursor: default; background: var(--gray-100); }
+    .checklist-item.closed .checklist-item-name { opacity: 0.6; }
+    .checklist-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--green);
+      flex-shrink: 0;
+    }
+    .checklist-item-name { font-size: 14px; font-weight: 600; flex: 1; }
+    .checklist-item-closed-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--red);
+      background: var(--red-light);
+      padding: 2px 7px;
+      border-radius: 10px;
+    }
+
     /* ── Tips ── */
     .tips-list {
       display: grid;
@@ -579,10 +671,52 @@
 
 <div class="container">
 
-  <div class="alert alert-red" style="margin-top:20px;">
-    <div class="alert-icon">⏰</div>
-    <div><strong>Marion Berries games are done for the season.</strong> The Berry Pass itself is still valid through September 7 for every other attraction - if you haven't used it up, now's the time.</div>
+  <div class="countdown-banner">
+    <div class="countdown-figure">
+      <div class="countdown-number" id="countdown-number">–</div>
+      <div class="countdown-unit">days left</div>
+    </div>
+    <div class="countdown-text">
+      <strong>Your Berry Pass expires September 7.</strong>
+      Marion Berries games are already done for the season - check off what's left below before the rest of it expires too.
+    </div>
   </div>
+
+  <!-- ── Last Chance Checklist ── -->
+  <section style="padding-top:24px;">
+    <h2>Last Chance Checklist</h2>
+    <p class="section-desc">Tap what you've already used. Whatever's left unchecked when the pass expires is money you paid for and didn't get.</p>
+
+    <div class="checklist-progress">
+      <span id="checklist-progress-text">0 of 17 used</span>
+      <div class="checklist-progress-bar"><div class="checklist-progress-fill" id="checklist-progress-fill"></div></div>
+    </div>
+
+    <div class="checklist" id="checklist">
+      <label class="checklist-item closed">
+        <input type="checkbox" disabled>
+        <span class="checklist-item-name">⚾ Marion Berries Baseball</span>
+        <span class="checklist-item-closed-label">Season over</span>
+      </label>
+      <label class="checklist-item" data-key="athletic-edge"><input type="checkbox"><span class="checklist-item-name">🧗 Athletic Edge Adventure Park</span></label>
+      <label class="checklist-item" data-key="mini-golf"><input type="checkbox"><span class="checklist-item-name">⛳ Best Little Roadhouse Mini Golf</span></label>
+      <label class="checklist-item" data-key="chick-fil-a"><input type="checkbox"><span class="checklist-item-name">🐔 Chick-fil-A</span></label>
+      <label class="checklist-item" data-key="enchanted-forest"><input type="checkbox"><span class="checklist-item-name">🎢 Enchanted Forest</span></label>
+      <label class="checklist-item" data-key="extreme-velocity"><input type="checkbox"><span class="checklist-item-name">🎢 Extreme Velocity</span></label>
+      <label class="checklist-item" data-key="fordyce-farm"><input type="checkbox"><span class="checklist-item-name">🍓 Fordyce Farm</span></label>
+      <label class="checklist-item" data-key="get-air"><input type="checkbox"><span class="checklist-item-name">🤸 Get Air, Salem</span></label>
+      <label class="checklist-item" data-key="gilbert-house"><input type="checkbox"><span class="checklist-item-name">🔬 Gilbert House Children's Museum</span></label>
+      <label class="checklist-item" data-key="oregon-garden"><input type="checkbox"><span class="checklist-item-name">🌸 Oregon Garden</span></label>
+      <label class="checklist-item" data-key="state-fair"><input type="checkbox"><span class="checklist-item-name">🎡 Oregon State Fair</span></label>
+      <label class="checklist-item" data-key="rec-bowling"><input type="checkbox"><span class="checklist-item-name">🎳 REC Bowling</span></label>
+      <label class="checklist-item" data-key="rock-boxx"><input type="checkbox"><span class="checklist-item-name">🧗 Rock Boxx Climbing Gym</span></label>
+      <label class="checklist-item" data-key="golf-range"><input type="checkbox"><span class="checklist-item-name">🏌️ Salem Golf Club Driving Range</span></label>
+      <label class="checklist-item" data-key="carousel"><input type="checkbox"><span class="checklist-item-name">🎠 Salem's Riverfront Carousel</span></label>
+      <label class="checklist-item" data-key="ymca"><input type="checkbox"><span class="checklist-item-name">🏊 Salem YMCA Swimming Pool</span></label>
+      <label class="checklist-item" data-key="kroc"><input type="checkbox"><span class="checklist-item-name">🏋️ Salvation Army KROC Center</span></label>
+      <label class="checklist-item" data-key="willamette-heritage"><input type="checkbox"><span class="checklist-item-name">🏛️ Willamette Heritage Center</span></label>
+    </div>
+  </section>
 
   <!-- ── All Attractions ── -->
   <section>
@@ -1289,6 +1423,43 @@
       });
     });
   });
+
+  // ── Countdown to pass expiration (Sept 7, 2026) ──
+  const passExpires = new Date('2026-09-07T23:59:59');
+  const now = new Date();
+  const msLeft = passExpires - now;
+  const daysLeft = Math.max(0, Math.ceil(msLeft / (1000 * 60 * 60 * 24)));
+  document.getElementById('countdown-number').textContent = daysLeft;
+
+  // ── Last Chance Checklist (persisted in localStorage) ──
+  const checklistItems = document.querySelectorAll('.checklist-item[data-key]');
+  const progressText = document.getElementById('checklist-progress-text');
+  const progressFill = document.getElementById('checklist-progress-fill');
+  const storageKey = 'berrypass-checklist-2026';
+  const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
+
+  function updateProgress() {
+    const doneCount = document.querySelectorAll('.checklist-item.done').length;
+    progressText.textContent = `${doneCount} of ${checklistItems.length} used`;
+    progressFill.style.width = `${(doneCount / checklistItems.length) * 100}%`;
+  }
+
+  checklistItems.forEach(item => {
+    const key = item.dataset.key;
+    const checkbox = item.querySelector('input[type="checkbox"]');
+    if (saved[key]) {
+      checkbox.checked = true;
+      item.classList.add('done');
+    }
+    checkbox.addEventListener('change', () => {
+      item.classList.toggle('done', checkbox.checked);
+      saved[key] = checkbox.checked;
+      localStorage.setItem(storageKey, JSON.stringify(saved));
+      updateProgress();
+    });
+  });
+
+  updateProgress();
 </script>
 
 </body>
